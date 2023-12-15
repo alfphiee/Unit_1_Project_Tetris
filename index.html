@@ -3,10 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
     <title>Tetris</title>
   </head>
   <body>
+    <div class="container">
+      <aside>
+        <div class="next-block">
+          <h2>Next Block</h2>
+          <div class="next-block-container">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+          </div>
+          <div class="scoreboard">
+            Current Score
+            <br /><span class="score">000000000000</span>
+            <h2>High Scores</h2>
+            <div class="side-leaderboard">
+              <table></table>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <main>
+        <h1>TETRIS</h1>
+        <div class="board">
+          <div id="game-start-overlay" class="overlay visible">
+            <button id="play-game">Play Game</button>
+          </div>
+          <div id="game-over-overlay" class="overlay">
+            <div class="overlay-content">
+              <h1>Game Over</h1>
+              <p>Enter your name:</p>
+              <input
+                id="save-score-input"
+                autocomplete="off"
+                type="text"
+                id="player-name"
+              />
+              <button id="save-score-btn">Save Score</button>
+            </div>
+          </div>
+          <div id="leaderboard-overlay" class="overlay">
+            <div class="overlay-content">
+              <h2>Top 10 Leaderboard</h2>
+              <table id="leaderboard">
+                <thead>
+                  <tr>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="position-gold">
+                    <td>1.</td>
+                    <td>...</td>
+                    <td>...</td>
+                  </tr>
+                  <tr class="position-silver">
+                    <td>2.</td>
+                    <td>...</td>
+                    <td>...</td>
+                  </tr>
+                  <tr class="position-bronze">
+                    <td>3.</td>
+                    <td>...</td>
+                    <td>...</td>
+                  </tr>
+                  <tr>
+                    <td>4.</td>
+                    <td>...</td>
+                    <td>...</td>
+                  </tr>
+                  <tr>
+                    <td>5.</td>
+                    <td>...</td>
+                    <td>...</td>
+                  </tr>
+                  <tr>
+                    <td>6.</td>
+                    <td>...</td>
+                    <td>...</td>
+                  </tr>
+                  <tr>
+                    <td>7.</td>
+                    <td>...</td>
+                    <td>...</td>
+                  </tr>
+                  <tr>
+                    <td>8.</td>
+                    <td>...</td>
+                    <td>...</td>
+                  </tr>
+                  <tr>
+                    <td>9.</td>
+                    <td>...</td>
+                    <td>...</td>
+                  </tr>
+                  <tr>
+                    <td>10.</td>
+                    <td>...</td>
+                    <td>...</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button id="play-again">Play Again</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
     <script src="js/app.js"></script>
   </body>
 </html>

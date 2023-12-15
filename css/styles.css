@@ -1,0 +1,245 @@
+:root {
+    --cell-border: #343333;
+    --i-piece: #B7FFFA;
+    --j-piece: #7CB9E8;
+    --l-piece: #FF964F;
+    --o-piece: #FFBE0B;
+    --s-piece: #B5F44A;
+    --t-piece: #F0BCD4;
+    --z-piece: #E56B70;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button, input {
+    outline: none;
+    border: 0;
+    font-family: 'Silkscreen', sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Silkscreen', sans-serif;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 50vmin 1fr;
+    height: 100vh;
+    justify-content: center;
+    align-items: baseline;
+    align-content: center;
+    justify-items: end;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+}
+
+.next-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.next-block-container {
+    display:grid;
+    grid-template-rows: repeat(2, 4vh);
+    grid-template-columns: repeat(4, 4vh);
+    border: 4px solid var(--cell-border);
+    background-color: var(--cell-border);
+    margin-top: 0.4vmin
+}
+
+.board {
+    display: grid;
+    grid-template-rows: repeat(20, 4vh);
+    grid-template-columns: repeat(10, 4vh);
+    border: 4px solid var(--cell-border);
+    background-color: var(--cell-border);
+    gap: 0px
+}
+
+#game-start-overlay button {
+    background: #B5F44A;
+    height: 3vh;
+    width: 20vw;
+}
+
+#game-start-overlay button:hover {
+    background: #82b42c;
+    color: #fff;
+}
+
+.scoreboard {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.scoreboard td {
+    padding-left: 1.5vmin;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+}
+
+
+#game-over-overlay {
+    transition: opacity 3s;
+    background: rgba(0, 0, 0, 0.95); /* Semi-transparent black */
+}
+
+
+#leaderboard-overlay {
+    background: rgba(0, 0, 0, 1); /* Semi-transparent black */
+}
+
+.overlay.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+#leaderboard-overlay button {
+    padding: 5vmin 7vmin;
+    margin-top: 5vmin;
+    background: #B5F44A;
+    font-size: 2vmin;
+    transition: box-shadow 0.3s ease-in, background 0.3s ease-in;
+}
+
+#leaderboard-overlay button:hover {
+    background: #82b42c;
+    color: #fff;
+    box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.2) ;
+}
+
+#leaderboard {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+#leaderboard th {
+    padding: 4vmin;
+}
+
+#leaderboard td {
+    padding-top: 2vmin;
+}
+
+#game-over-overlay input {
+    border-radius: 5px;
+    padding: 1vmin;
+}
+
+#game-over-overlay button {
+    border-radius: 5px;
+    padding: 1vmin;
+    background: #7CB9E8;
+}
+
+#game-over-overlay button:hover {
+    color: #fff;
+    background: #5889ae
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+}
+
+.position-gold {
+    color: #FFD700;
+}
+
+.position-silver {
+    color: #C0C0C0;
+}
+
+.position-bronze {
+    color: #CD7F32;
+}
+
+.cell {
+    background-color: #222;
+    border: 0.2px solid var(--cell-border);
+    border-radius: 4px
+}
+
+.i-piece {
+    box-shadow: inset 0 0 0px 2px var(--i-piece);
+    background-color: var(--i-piece);
+}
+
+.j-piece {
+    box-shadow: inset 0 0 0px 2px var(--j-piece);
+    background-color: var(--j-piece);
+}
+
+.l-piece {
+    box-shadow: inset 0 0 0px 2px var(--l-piece);
+    background-color: var(--l-piece); 
+}
+
+.o-piece {
+    box-shadow: inset 0 0 0px 2px var(--o-piece);
+    background-color: var(--o-piece);
+}
+
+.s-piece {
+    box-shadow: inset 0 0 0px 2px var(--s-piece);
+    background-color: var(--s-piece);
+}
+
+.t-piece {
+    box-shadow: inset 0 0 0px 2px var(--t-piece);
+    background-color: var(--t-piece);
+}
+
+.z-piece {
+    box-shadow: inset 0 0 0px 2px var(--z-piece);
+    background-color: var(--z-piece);
+}
+.outline { 
+    background-color:#222
+}
+
+.active-score {
+    color: #E56B70
+}
+
+@media screen and (max-width:860px){
+    .container{
+        display: flex;
+    }
+
+    #game-start-overlay.overlay {
+        margin-left: 15vw;
+    }
+    
+}

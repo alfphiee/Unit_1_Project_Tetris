@@ -62,8 +62,8 @@ class Block {
 
 //! AUDIO
 
-const gameOverAudio = new Audio('../audio/game-over.wav')
-const gameMusic = new Audio('../audio/baptiste-2.mp3')
+const gameOverAudio = new Audio('audio/game-over.wav')
+const gameMusic = new Audio('audio/baptiste-2.mp3')
 gameMusic.loop = true
 
 // ! CONSTANTS
